@@ -1,6 +1,7 @@
 package com.application.proyecto.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -8,7 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "Estado")
@@ -20,33 +23,53 @@ public class Estado implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
 	@Column(name = "IdEstado")
-	private Integer IdEstado;
+	private Integer idEstado;
 	
 	@Column(name = "Descripcion")
-	private String Descripcion;
+	private String descripcion;
 
+	@OneToMany(mappedBy = "estadoIdEstado")
+	private List<Estado> estadoList;
+	
 	/*
 	 * Mapeo GET AND SET
 	 */
-	
+
 	public Integer getIdEstado() {
-		return IdEstado;
+		return idEstado;
 	}
 
 	public void setIdEstado(Integer idEstado) {
-		IdEstado = idEstado;
+		this.idEstado = idEstado;
 	}
 
 	public String getDescripcion() {
-		return Descripcion;
+		return descripcion;
 	}
 
 	public void setDescripcion(String descripcion) {
-		Descripcion = descripcion;
+		this.descripcion = descripcion;
+	}
+
+	public List<Estado> getEstadoList() {
+		return estadoList;
+	}
+
+	public void setEstadoList(List<Estado> estadoList) {
+		this.estadoList = estadoList;
+	}
+	
+	
+	
+	
+	
+	
+	
+
 	}
 
 	
 	
 	
 	
-}
+
