@@ -1,6 +1,7 @@
 package com.application.proyecto.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -8,7 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "Pais")
@@ -25,7 +28,58 @@ public class Pais implements Serializable{
 	@Column(name = "NomPais")
 	private String NomPais;
 	
+	//RELACIONES UNO A MUCHOS
 	
+		@OneToMany(mappedBy = "Pais_idPais")
+	   	private List<Ciudad> ciudadList;
+		
 	
+		@OneToMany(mappedBy = "IdSalPaisINT")
+	   	private List<Vuelo> vueloSalList;
 	
+		@OneToMany(mappedBy = "IdDesPaisINT")
+	   	private List<Vuelo> vueloDesList;
+
+		public Integer getIdPais() {
+			return idPais;
+		}
+
+		public void setIdPais(Integer idPais) {
+			this.idPais = idPais;
+		}
+
+		public String getNomPais() {
+			return NomPais;
+		}
+
+		public void setNomPais(String nomPais) {
+			NomPais = nomPais;
+		}
+
+		public List<Ciudad> getCiudadList() {
+			return ciudadList;
+		}
+
+		public void setCiudadList(List<Ciudad> ciudadList) {
+			this.ciudadList = ciudadList;
+		}
+
+		public List<Vuelo> getVueloSalList() {
+			return vueloSalList;
+		}
+
+		public void setVueloSalList(List<Vuelo> vueloSalList) {
+			this.vueloSalList = vueloSalList;
+		}
+
+		public List<Vuelo> getVueloDesList() {
+			return vueloDesList;
+		}
+
+		public void setVueloDesList(List<Vuelo> vueloDesList) {
+			this.vueloDesList = vueloDesList;
+		}
+		
+		
+
 }
