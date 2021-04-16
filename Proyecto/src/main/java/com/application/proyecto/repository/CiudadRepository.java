@@ -1,5 +1,5 @@
 package com.application.proyecto.repository;
 
-public interface Pais {
+public interface CiudadRepository {
 
 }

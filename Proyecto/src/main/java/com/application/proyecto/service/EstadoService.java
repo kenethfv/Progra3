@@ -1,5 +1,5 @@
 package com.application.proyecto.service;
 
-public class Pais {
+public class EstadoService {
 
 }
