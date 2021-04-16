@@ -28,6 +28,10 @@ public class Estado implements Serializable{
 	@Column(name = "Descripcion")
 	private String descripcion;
 
+	/*
+	 * Uno a muchos
+	 */
+	
 	@OneToMany(mappedBy = "estadoIdEstado")
 	private List<Estado> estadoList;
 	
