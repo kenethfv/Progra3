@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.application.proyecto.entity.Cliente;
 
-@Repository("clienteRepository")
+@Repository("ClienteRepository")
 public interface ClienteRepository extends JpaRepository<Cliente, Serializable>{
 
 

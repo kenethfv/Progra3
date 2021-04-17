@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.application.proyecto.entity.Proveedor;
 
-@Repository("proveedorRepository")
+@Repository("ProveedorRepository")
 public interface ProveedorRepository extends JpaRepository<Proveedor, Serializable>{
 
 }
