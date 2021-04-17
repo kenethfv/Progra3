@@ -1,15 +1,20 @@
 package com.application.proyecto.service;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.application.proyecto.entity.Ciudad;
 import com.application.proyecto.entity.Pais;
+import com.application.proyecto.entity.Vuelo;
 import com.application.proyecto.repository.CiudadRepository;
 import com.application.proyecto.repository.PaisRepository;
 import com.application.proyecto.repository.VueloRepository;
@@ -36,8 +41,8 @@ public class PaisService {
 			return paisRepository.findAll();
 		}
 		
-		//SERVICIO GUARDAR
-/*
+	//	SERVICIO GUARDAR
+
 		@PostMapping(path = "/guardar")
 		public Pais saveCliente(@RequestBody Pais pais) {
 
@@ -65,28 +70,28 @@ public class PaisService {
 
 			if (vueloDestino != null) {
 				for (Vuelo vd : vueloDestino) {
-					vd.set(cliente.getIdCliente());
-					correoClienteRespository.save(c);
-					cliente.getCorreoclienteList().add(c);
+					vd.setIdDesPais(pais.getIdPais());
+					vueloRepository.save(vd);
+					pais.getVueloDesList().add(vd);
 				}
 			}
 
 			if (vueloSalida != null) {
-				for (DireccionCliente d : direcciones) {
-					d.setClienteIdCliente(cliente.getIdCliente());
-					direccionClienteRepository.save(d);
-					cliente.getDireccionclienteList().add(d);
+				for (Vuelo vs : vueloSalida) {
+					vs.setIdSalPais(pais.getIdPais());
+					vueloRepository.save(vs);
+					pais.getVueloSalList().add(vs);
 				}
 			}
 
-			Optional<Cliente> clienteR;
-			clienteR = clienteRepository.findById(cliente.getIdCliente());
-			if (clienteR.isPresent()) {
-				cliente = clienteR.get();
+			Optional<Pais> paisR;
+			paisR = paisRepository.findById(pais.getIdPais());
+			if (paisR.isPresent()) {
+				pais = paisR.get();
 
 			}
-			return cliente;
+			return pais;
 
 		}
-*/
+
 }

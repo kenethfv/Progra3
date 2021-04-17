@@ -22,10 +22,10 @@ public class Pais implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name = "idPais")
+	@Column(name = "idpais")
 	private Integer idPais;
 	
-	@Column(name = "NomPais")
+	@Column(name = "nompais")
 	private String NomPais;
 	
 	//RELACIONES UNO A MUCHOS

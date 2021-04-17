@@ -20,23 +20,31 @@ public class VueloCliente implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name = "idVuelo_Cliente")
+	@Column(name = "idvueloCliente")
 	private Integer idVuelo_Cliente;
 	
-	@Column(name = "IdVuelo")
+	@Column(name = "Idvuelo")
 	private Integer idVuelo;
 	
-	@Column(name = "NoBoletos")
+	@Column(name = "noboletos")
 	private Integer NoBoletos;
 	
-	@Column(name = "Total")
+	@Column(name = "total")
 	private double Total;
 	
+<<<<<<< HEAD
 	@Column(name = "Cliente_idCliente")
-	private double clienteIdCliente;
+	private Integer clienteIdCliente;
 	
 	@Column(name = "Estado_IdEstado")
+	private Integer estadoIdEstado;
+=======
+	@Column(name = "clienteIdcliente")
+	private double clienteIdCliente;
+	
+	@Column(name = "estadoIdestado")
 	private double estadoIdEstado;
+>>>>>>> bd0c3cd58653ac97eb0d3a0876966882e02b8d5d
 	
 	/*
 	 * Get and Set
@@ -74,22 +82,23 @@ public class VueloCliente implements Serializable{
 		Total = total;
 	}
 
-	public double getClienteIdCliente() {
+	public Integer getClienteIdCliente() {
 		return clienteIdCliente;
 	}
 
-	public void setClienteIdCliente(double clienteIdCliente) {
+	public void setClienteIdCliente(Integer clienteIdCliente) {
 		this.clienteIdCliente = clienteIdCliente;
 	}
 
-	public double getEstadoIdEstado() {
+	public Integer getEstadoIdEstado() {
 		return estadoIdEstado;
 	}
 
-	public void setEstadoIdEstado(double estadoIdEstado) {
+	public void setEstadoIdEstado(Integer estadoIdEstado) {
 		this.estadoIdEstado = estadoIdEstado;
 	}
 	
+		
 	
 	
 }

@@ -22,13 +22,13 @@ public class Ciudad implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name= "idCiudad")
+	@Column(name= "idciudad")
 	private Integer idCiudad;
 	
-	@Column(name = "NomCiudad")
+	@Column(name = "nomciudad")
 	private String nomCiudad;
 	
-	@Column(name= "Pais_idPais")
+	@Column(name= "Pais_idpais")
 	private Integer paisIdPais;
 	
 	//RELACIONES UNO A MUCHOS
