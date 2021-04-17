@@ -1,7 +1,7 @@
 package com.application.proyecto.entity;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.util.Date;
 import java.text.DecimalFormat;
 
 import javax.persistence.Basic;
@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -34,12 +33,12 @@ public class Vuelo implements Serializable{
 	private Integer cantpasajeros;
 	
 	@Column (name = "FechaSalida")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Timestamp fechasalida;
+	@Temporal(TemporalType.DATE)
+	private Date fechasalida;
 	
 	@Column (name = "FechaLlegada")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Timestamp fechallegada;
+	@Temporal(TemporalType.DATE)
+	private Date fechallegada;
 	
 	@Column (name = "Precio")
 	private DecimalFormat precio;
@@ -74,19 +73,19 @@ public class Vuelo implements Serializable{
 		this.cantpasajeros = cantpasajeros;
 	}
 
-	public Timestamp getFechasalida() {
+	public Date getFechasalida() {
 		return fechasalida;
 	}
 
-	public void setFechasalida(Timestamp fechasalida) {
+	public void setFechasalida(Date fechasalida) {
 		this.fechasalida = fechasalida;
 	}
 
-	public Timestamp getFechallegada() {
+	public Date getFechallegada() {
 		return fechallegada;
 	}
 
-	public void setFechallegada(Timestamp fechallegada) {
+	public void setFechallegada(Date fechallegada) {
 		this.fechallegada = fechallegada;
 	}
 
