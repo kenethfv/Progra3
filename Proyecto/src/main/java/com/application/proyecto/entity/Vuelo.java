@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
 
 public class Vuelo implements Serializable{
 	
-	private static final long serialVersionUID = 6L;
+	private static final long serialVersionUID = 7L;
 	
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY)
