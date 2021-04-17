@@ -33,10 +33,10 @@ public class Ciudad implements Serializable{
 	
 	//RELACIONES UNO A MUCHOS
 	
-			@OneToMany(mappedBy = "idsalciudad")
+			@OneToMany(mappedBy = "IdSalCiudad")
 		   	private List<Vuelo> ciudadSalList;
 			
-			@OneToMany(mappedBy = "iddesciudad")
+			@OneToMany(mappedBy = "IdDesCiudad")
 		   	private List<Vuelo> ciudadDesList;
 
 			public Integer getIdCiudad() {
