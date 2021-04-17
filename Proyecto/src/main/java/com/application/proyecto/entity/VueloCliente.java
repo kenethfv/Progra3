@@ -31,20 +31,12 @@ public class VueloCliente implements Serializable{
 	
 	@Column(name = "total")
 	private double Total;
-	
-<<<<<<< HEAD
+
 	@Column(name = "Cliente_idCliente")
 	private Integer clienteIdCliente;
 	
 	@Column(name = "Estado_IdEstado")
 	private Integer estadoIdEstado;
-=======
-	@Column(name = "clienteIdcliente")
-	private double clienteIdCliente;
-	
-	@Column(name = "estadoIdestado")
-	private double estadoIdEstado;
->>>>>>> bd0c3cd58653ac97eb0d3a0876966882e02b8d5d
 	
 	/*
 	 * Get and Set
