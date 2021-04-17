@@ -22,21 +22,21 @@ public class Ciudad implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name= "idCiudad")
+	@Column(name= "idciudad")
 	private Integer idCiudad;
 	
-	@Column(name = "NomCiudad")
+	@Column(name = "nomciudad")
 	private String nomCiudad;
 	
-	@Column(name= "Pais_idPais")
+	@Column(name= "Pais_idpais")
 	private Integer paisIdPais;
 	
 	//RELACIONES UNO A MUCHOS
 	
-			@OneToMany(mappedBy = "IdSalCiudad")
+			@OneToMany(mappedBy = "idsalciudad")
 		   	private List<Vuelo> ciudadSalList;
 			
-			@OneToMany(mappedBy = "IdDesCiudad")
+			@OneToMany(mappedBy = "iddesciudad")
 		   	private List<Vuelo> ciudadDesList;
 
 			public Integer getIdCiudad() {

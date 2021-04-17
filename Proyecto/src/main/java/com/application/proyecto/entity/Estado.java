@@ -22,17 +22,17 @@ public class Estado implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name = "IdEstado")
+	@Column(name = "idestado")
 	private Integer idEstado;
 	
-	@Column(name = "Descripcion")
+	@Column(name = "escripcion")
 	private String descripcion;
 
 	/*
 	 * Uno a muchos
 	 */
 	
-	@OneToMany(mappedBy = "estadoIdEstado")
+	@OneToMany(mappedBy = "estadoIdestado")
 	private List<VueloCliente> vueloClientesList;
 	
 	/*

@@ -26,33 +26,33 @@ public class Vuelo implements Serializable{
 	@GeneratedValue( strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
 	
-	@Column (name = "idVuelo")
+	@Column (name = "idvuelo")
 	private Integer idvuelo;
 	
-	@Column (name = "CantPasajeros")
+	@Column (name = "cantpasajeros")
 	private Integer cantpasajeros;
 	
-	@Column (name = "FechaSalida")
+	@Column (name = "fechasalida")
 	@Temporal(TemporalType.DATE)
 	private Date fechasalida;
 	
-	@Column (name = "FechaLlegada")
+	@Column (name = "fechallegada")
 	@Temporal(TemporalType.DATE)
 	private Date fechallegada;
 	
-	@Column (name = "Precio")
+	@Column (name = "precio")
 	private DecimalFormat precio;
 	
-	@Column (name = "IdSalPais")
+	@Column (name = "idsalpais")
 	private Integer IdSalPais;
 	
-	@Column (name = "IdDesPais")
+	@Column (name = "Iddespais")
 	private Integer IdDesPais;
 	
-	@Column (name = "IdSalCiudad")
+	@Column (name = "idsalciudad")
 	private Integer IdSalCiudad;
 	
-	@Column (name = "IdDesCiudad")
+	@Column (name = "iddesciudad")
 	private Integer IdDesCiudad;
 	
 	

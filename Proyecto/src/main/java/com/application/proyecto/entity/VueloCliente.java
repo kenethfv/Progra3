@@ -20,22 +20,22 @@ public class VueloCliente implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name = "idVuelo_Cliente")
+	@Column(name = "idvueloCliente")
 	private Integer idVuelo_Cliente;
 	
-	@Column(name = "IdVuelo")
+	@Column(name = "Idvuelo")
 	private Integer idVuelo;
 	
-	@Column(name = "NoBoletos")
+	@Column(name = "noboletos")
 	private Integer NoBoletos;
 	
-	@Column(name = "Total")
+	@Column(name = "total")
 	private double Total;
 	
-	@Column(name = "Cliente_idCliente")
+	@Column(name = "clienteIdcliente")
 	private double clienteIdCliente;
 	
-	@Column(name = "Estado_IdEstado")
+	@Column(name = "estadoIdestado")
 	private double estadoIdEstado;
 	
 	/*

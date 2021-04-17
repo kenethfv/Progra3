@@ -22,21 +22,21 @@ public class Pais implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name = "idPais")
+	@Column(name = "idpais")
 	private Integer idPais;
 	
-	@Column(name = "NomPais")
+	@Column(name = "nompais")
 	private String NomPais;
 	
 	//RELACIONES UNO A MUCHOS
 
-		@OneToMany(mappedBy = "paisIdPais")
+		@OneToMany(mappedBy = "paisidpais")
 	   	private List<Ciudad> ciudadList;
 		
-		@OneToMany(mappedBy = "IdSalPais")
+		@OneToMany(mappedBy = "idsalpais")
 	   	private List<Vuelo> vueloSalList;
 	
-		@OneToMany(mappedBy = "IdDesPais")
+		@OneToMany(mappedBy = "iddespais")
 	   	private List<Vuelo> vueloDesList;
 
 		public Integer getIdPais() {
