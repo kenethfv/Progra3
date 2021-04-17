@@ -11,6 +11,6 @@ import com.application.proyecto.entity.VueloCliente;
 @Repository("VueloClienteRepository")
 public interface VueloClienteRepository extends JpaRepository<VueloCliente, Serializable>{
 
-	public List<VueloCliente> findByNoBoletos(Integer NoBoletos);
+	
 	
 }
