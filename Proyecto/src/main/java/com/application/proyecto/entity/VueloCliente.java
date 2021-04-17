@@ -31,12 +31,12 @@ public class VueloCliente implements Serializable{
 	
 	@Column(name = "total")
 	private double Total;
+
+	@Column(name = "Cliente_idCliente")
+	private Integer clienteIdCliente;
 	
-	@Column(name = "clienteIdcliente")
-	private double clienteIdCliente;
-	
-	@Column(name = "estadoIdestado")
-	private double estadoIdEstado;
+	@Column(name = "Estado_IdEstado")
+	private Integer estadoIdEstado;
 	
 	/*
 	 * Get and Set
@@ -74,22 +74,23 @@ public class VueloCliente implements Serializable{
 		Total = total;
 	}
 
-	public double getClienteIdCliente() {
+	public Integer getClienteIdCliente() {
 		return clienteIdCliente;
 	}
 
-	public void setClienteIdCliente(double clienteIdCliente) {
+	public void setClienteIdCliente(Integer clienteIdCliente) {
 		this.clienteIdCliente = clienteIdCliente;
 	}
 
-	public double getEstadoIdEstado() {
+	public Integer getEstadoIdEstado() {
 		return estadoIdEstado;
 	}
 
-	public void setEstadoIdEstado(double estadoIdEstado) {
+	public void setEstadoIdEstado(Integer estadoIdEstado) {
 		this.estadoIdEstado = estadoIdEstado;
 	}
 	
+		
 	
 	
 }

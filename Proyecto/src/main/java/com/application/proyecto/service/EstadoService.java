@@ -34,7 +34,7 @@ public class EstadoService {
 	VueloClienteRepository vueloClienteRepository;
 	
 	@GetMapping(path = "/buscar")
-	public List<Estado> getEstados() {
+	public List<Estado> getEstado() {
 		return estadoRepository.findAll();
 	}
 	
