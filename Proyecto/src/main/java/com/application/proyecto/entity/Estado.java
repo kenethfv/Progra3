@@ -32,7 +32,7 @@ public class Estado implements Serializable{
 	 * Uno a muchos
 	 */
 	
-	@OneToMany(mappedBy = "estadoIdestado")
+	@OneToMany(mappedBy = "estadoIdEstado")
 	private List<VueloCliente> vueloClientesList;
 	
 	/*

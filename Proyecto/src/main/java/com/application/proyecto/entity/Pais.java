@@ -30,13 +30,13 @@ public class Pais implements Serializable{
 	
 	//RELACIONES UNO A MUCHOS
 
-		@OneToMany(mappedBy = "paisidpais")
+		@OneToMany(mappedBy = "paisIdPais")
 	   	private List<Ciudad> ciudadList;
 		
-		@OneToMany(mappedBy = "idsalpais")
+		@OneToMany(mappedBy = "IdSalPais")
 	   	private List<Vuelo> vueloSalList;
 	
-		@OneToMany(mappedBy = "iddespais")
+		@OneToMany(mappedBy = "IdDesPais")
 	   	private List<Vuelo> vueloDesList;
 
 		public Integer getIdPais() {
