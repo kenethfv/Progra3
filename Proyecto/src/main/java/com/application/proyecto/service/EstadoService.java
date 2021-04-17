@@ -2,9 +2,12 @@ package com.application.proyecto.service;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,10 +15,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.application.proyecto.entity.Estado;
 import com.application.proyecto.entity.VueloCliente;
 import com.application.proyecto.repository.EstadoRepository;
 import com.application.proyecto.repository.VueloClienteRepository;
+
 
 @RestController
 @RequestMapping("/estado")
@@ -57,12 +62,30 @@ public class EstadoService {
 	}
 	
 	@GetMapping(path="/buscar/estado/{descripcion}")
-	public List<Estado> getAnuncio(@PathVariable("descripcion") String descripcion){
+	public List<Estado> getEstado(@PathVariable("descripcion") String descripcion){
 		
 		List<Estado> estados = estadoRepository.findByDescripcion(descripcion);
 		
 		return estados;
 	}
+	
+	@DeleteMapping(path="/eliminar/{idEstado}")
+	public void deleteEstado(@PathVariable ("idEstado") String idEstado) {
+		Optional<Estado> estado;
+		estado= estadoRepository.findById(idEstado);
+		if(estado.isPresent()) {
+			Estado borrar = estado.get();
+			for(VueloCliente e : borrar.getVueloClientesList()) {
+				vueloClienteRepository.delete(e);
+			}
+		}
+		
+		
+	}
+	
+	
+	
+	
 	
 	
 }
