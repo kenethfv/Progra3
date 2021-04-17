@@ -34,10 +34,10 @@ public class Pais implements Serializable{
 	   	private List<Ciudad> ciudadList;
 		
 	
-		@OneToMany(mappedBy = "IdSalPaisINT")
+		@OneToMany(mappedBy = "IdSalPais")
 	   	private List<Vuelo> vueloSalList;
 	
-		@OneToMany(mappedBy = "IdDesPaisINT")
+		@OneToMany(mappedBy = "IdDesPais")
 	   	private List<Vuelo> vueloDesList;
 
 		public Integer getIdPais() {
@@ -79,7 +79,9 @@ public class Pais implements Serializable{
 		public void setVueloDesList(List<Vuelo> vueloDesList) {
 			this.vueloDesList = vueloDesList;
 		}
-		
+
+
+
 		
 
 }
