@@ -25,7 +25,7 @@ public class Estado implements Serializable{
 	@Column(name = "idestado")
 	private Integer idEstado;
 	
-	@Column(name = "escripcion")
+	@Column(name = "Descripcion")
 	private String descripcion;
 
 	/*
