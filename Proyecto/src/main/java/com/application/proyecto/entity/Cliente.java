@@ -38,7 +38,7 @@ public class Cliente implements Serializable {
 	private String sexo;
 	
 	@OneToMany(mappedBy = "clienteIdCliente")
-   	private List<VueloCliente> vueloClienteList;
+	private List<VueloCliente> vueloClienteList;
 
 	public Integer getIdcliente() {
 		return idcliente;
@@ -89,6 +89,5 @@ public class Cliente implements Serializable {
 	}
 
 	
-
 	
 }

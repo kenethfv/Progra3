@@ -21,7 +21,6 @@ import com.application.proyecto.entity.VueloCliente;
 import com.application.proyecto.repository.EstadoRepository;
 import com.application.proyecto.repository.VueloClienteRepository;
 
-
 @RestController
 @RequestMapping("/estado")
 @CrossOrigin
@@ -41,20 +40,20 @@ public class EstadoService {
 	@PostMapping(path = "/guardar")
 	public Estado saveEstado(@RequestBody Estado estado) {
 		
-		List<VueloCliente> vueloClientes = estado.getVueloClientesList();
+		List<VueloCliente> vueloClientes = estado.getVueloClienteList();
 		
-		estado.setVueloClientesList(null);
+		estado.setVueloClienteList(null);
 		
 		estado = estadoRepository.save(estado);
 		
-		estado.setVueloClientesList(new LinkedList<>());
+		estado.setVueloClienteList(new LinkedList<>());
 		
 		
 		if (vueloClientes != null) {
 			for (VueloCliente t : vueloClientes) {
 				t.setNoBoletos(estado.getIdEstado());
 				vueloClienteRepository.save(t);
-				estado.getVueloClientesList().add(t);
+				estado.getVueloClienteList().add(t);
 			}
 		}
 		
@@ -75,7 +74,7 @@ public class EstadoService {
 		estado= estadoRepository.findById(idEstado);
 		if(estado.isPresent()) {
 			Estado borrar = estado.get();
-			for(VueloCliente e : borrar.getVueloClientesList()) {
+			for(VueloCliente e : borrar.getVueloClienteList()) {
 				vueloClienteRepository.delete(e);
 			}
 		}

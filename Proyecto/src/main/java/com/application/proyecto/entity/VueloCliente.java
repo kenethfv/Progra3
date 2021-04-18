@@ -20,17 +20,17 @@ public class VueloCliente implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name = "idvueloCliente")
-	private Integer idVuelo_Cliente;
+	@Column(name = "idVueloCliente")
+	private Integer idVueloCliente;
 	
 	@Column(name = "Idvuelo")
 	private Integer idVuelo;
 	
-	@Column(name = "noboletos")
-	private Integer NoBoletos;
+	@Column(name = "NoBoletos")
+	private Integer noBoletos;
 	
-	@Column(name = "total")
-	private double Total;
+	@Column(name = "Total")
+	private double total;
 
 	@Column(name = "Cliente_idCliente")
 	private Integer clienteIdCliente;
@@ -42,12 +42,13 @@ public class VueloCliente implements Serializable{
 	 * Get and Set
 	 */
 
-	public Integer getIdVuelo_Cliente() {
-		return idVuelo_Cliente;
+
+	public Integer getIdVueloCliente() {
+		return idVueloCliente;
 	}
 
-	public void setIdVuelo_Cliente(Integer idVuelo_Cliente) {
-		this.idVuelo_Cliente = idVuelo_Cliente;
+	public void setIdVueloCliente(Integer idVueloCliente) {
+		this.idVueloCliente = idVueloCliente;
 	}
 
 	public Integer getIdVuelo() {
@@ -59,19 +60,19 @@ public class VueloCliente implements Serializable{
 	}
 
 	public Integer getNoBoletos() {
-		return NoBoletos;
+		return noBoletos;
 	}
 
 	public void setNoBoletos(Integer noBoletos) {
-		NoBoletos = noBoletos;
+		this.noBoletos = noBoletos;
 	}
 
 	public double getTotal() {
-		return Total;
+		return total;
 	}
 
 	public void setTotal(double total) {
-		Total = total;
+		this.total = total;
 	}
 
 	public Integer getClienteIdCliente() {
@@ -89,6 +90,9 @@ public class VueloCliente implements Serializable{
 	public void setEstadoIdEstado(Integer estadoIdEstado) {
 		this.estadoIdEstado = estadoIdEstado;
 	}
+	
+	
+
 	
 		
 	

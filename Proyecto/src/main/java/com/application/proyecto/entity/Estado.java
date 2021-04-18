@@ -33,7 +33,7 @@ public class Estado implements Serializable{
 	 */
 	
 	@OneToMany(mappedBy = "estadoIdEstado")
-	private List<VueloCliente> vueloClientesList;
+	private List<VueloCliente> vueloClienteList;
 	
 	/*
 	 * Mapeo GET AND SET
@@ -55,12 +55,12 @@ public class Estado implements Serializable{
 		this.descripcion = descripcion;
 	}
 
-	public List<VueloCliente> getVueloClientesList() {
-		return vueloClientesList;
+	public List<VueloCliente> getVueloClienteList() {
+		return vueloClienteList;
 	}
 
-	public void setVueloClientesList(List<VueloCliente> vueloClientesList) {
-		this.vueloClientesList = vueloClientesList;
+	public void setVueloClienteList(List<VueloCliente> vueloClienteList) {
+		this.vueloClienteList = vueloClienteList;
 	}
 
 	
