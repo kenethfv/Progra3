@@ -15,34 +15,38 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.application.proyecto.entity.Cliente;
 import com.application.proyecto.repository.ClienteRepository;
-
-
-
+import com.application.proyecto.repository.VueloClienteRepository;
 
 @RestController
 @RequestMapping("/cliente")
 @CrossOrigin
 public class ClienteService {
+
 	@Autowired
-	ClienteRepository ClienteRepository;
+	ClienteRepository clienteRepository;
+
+	@Autowired
+	VueloClienteRepository vueloClienteRepository;
 
 	@GetMapping(path = "/buscar")
-	public List<Cliente>getAllCliente(){
-		return ClienteRepository.findAll();
+	public List<Cliente> getAllClientes() {
+		return clienteRepository.findAll();
 	}
+
 	@PostMapping(path = "/guardar")
-	public Cliente save(@RequestBody Cliente cliente){
-	return ClienteRepository.save(cliente);	
+	public Cliente save(@RequestBody Cliente cliente) {
+		return clienteRepository.save(cliente);
 	}
+
 	@DeleteMapping(path = "/eliminar/{idcliente}")
-	public void deleteCliente(@PathVariable("idcliente")Integer idcliente) {
-		
+	public void deleteCliente(@PathVariable("idcliente") Integer idcliente) {
+
 		Optional<Cliente> cliente;
-		
-		cliente=ClienteRepository.findById(idcliente);
-		
-		if(cliente.isPresent()) {
-			ClienteRepository.delete(cliente.get());
+
+		cliente = clienteRepository.findById(idcliente);
+
+		if (cliente.isPresent()) {
+			clienteRepository.delete(cliente.get());
+		}
 	}
-}
 }

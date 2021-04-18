@@ -1,6 +1,7 @@
 package com.application.proyecto.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -8,10 +9,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "Cliente")
 
 public class Cliente implements Serializable {
 
@@ -34,6 +36,9 @@ public class Cliente implements Serializable {
 
 	@Column(name = "sexo")
 	private String sexo;
+	
+	@OneToMany(mappedBy = "clienteIdCliente")
+   	private List<VueloCliente> vueloClienteList;
 
 	public Integer getIdcliente() {
 		return idcliente;
@@ -75,4 +80,15 @@ public class Cliente implements Serializable {
 		this.sexo = sexo;
 	}
 
+	public List<VueloCliente> getVueloClienteList() {
+		return vueloClienteList;
+	}
+
+	public void setVueloClienteList(List<VueloCliente> vueloClienteList) {
+		this.vueloClienteList = vueloClienteList;
+	}
+
+	
+
+	
 }
