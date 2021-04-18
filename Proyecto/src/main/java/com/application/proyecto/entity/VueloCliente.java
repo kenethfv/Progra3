@@ -20,22 +20,22 @@ public class VueloCliente implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name = "idVueloCliente")
-	private Integer idVueloCliente;
+	@Column(name = "idvueloCliente")
+	private Integer idvueloCliente;
 	
 	@Column(name = "Idvuelo")
 	private Integer idVuelo;
 	
-	@Column(name = "NoBoletos")
+	@Column(name = "noboletos")
 	private Integer noBoletos;
 	
-	@Column(name = "Total")
+	@Column(name = "total")
 	private double total;
 
-	@Column(name = "Cliente_idCliente")
+	@Column(name = "clienteIdcliente")
 	private Integer clienteIdCliente;
 	
-	@Column(name = "Estado_IdEstado")
+	@Column(name = "estadoIdestado")
 	private Integer estadoIdEstado;
 	
 	/*
@@ -43,17 +43,22 @@ public class VueloCliente implements Serializable{
 	 */
 
 
-	public Integer getIdVueloCliente() {
-		return idVueloCliente;
-	}
-
-	public void setIdVueloCliente(Integer idVueloCliente) {
-		this.idVueloCliente = idVueloCliente;
-	}
 
 	public Integer getIdVuelo() {
 		return idVuelo;
 	}
+	
+	public Integer getIdvueloCliente() {
+		return idvueloCliente;
+	}
+
+
+
+	public void setIdvueloCliente(Integer idvueloCliente) {
+		this.idvueloCliente = idvueloCliente;
+	}
+
+
 
 	public void setIdVuelo(Integer idVuelo) {
 		this.idVuelo = idVuelo;
@@ -92,6 +97,10 @@ public class VueloCliente implements Serializable{
 	}
 	
 	
+
+
+
+
 
 	
 		
