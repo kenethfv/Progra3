@@ -56,7 +56,12 @@ public class EstadoService {
 				estado.getVueloClienteList().add(t);
 			}
 		}
-		
+		Optional<Estado> estadoE;
+		estadoE = estadoRepository.findById(estado.getIdEstado());
+		if(estadoE.isPresent()) {
+			estado = estadoE.get();
+		}
+				
 		return estado;
 	}
 	
@@ -74,6 +79,7 @@ public class EstadoService {
 		estado= estadoRepository.findById(idEstado);
 		if(estado.isPresent()) {
 			Estado borrar = estado.get();
+			
 			for(VueloCliente e : borrar.getVueloClienteList()) {
 				vueloClienteRepository.delete(e);
 			}
