@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.application.proyecto.entity.Ciudad;
-import com.application.proyecto.entity.Pais;
 import com.application.proyecto.entity.Vuelo;
 import com.application.proyecto.repository.CiudadRepository;
 import com.application.proyecto.repository.VueloRepository;
@@ -25,7 +24,7 @@ import com.application.proyecto.repository.VueloRepository;
 @CrossOrigin
 
 public class CiudadService {
-	
+
 	@Autowired
 	CiudadRepository ciudadRepository;
 
@@ -33,80 +32,75 @@ public class CiudadService {
 	VueloRepository vueloRepository;
 
 	// SERVICIO BUSCAR
-	
+
 	@GetMapping(path = "/buscar")
 	public List<Ciudad> getAllCiudades() {
 		return ciudadRepository.findAll();
 	}
-	
+
 	// SERVICIO GUARDAR
 
-		@PostMapping(path = "/guardar")
-		public Ciudad saveCiudad(@RequestBody Ciudad ciudad) {
+	@PostMapping(path = "/guardar")
+	public Ciudad saveCiudad(@RequestBody Ciudad ciudad) {
 
-			List<Vuelo> ciudadSal = ciudad.getCiudadSalList();
-			List<Vuelo> ciudadDes = ciudad.getCiudadDesList();
+		List<Vuelo> ciudadSal = ciudad.getCiudadSalList();
+		List<Vuelo> ciudadDes = ciudad.getCiudadDesList();
 
-			ciudad.setCiudadSalList(null);
-			ciudad.setCiudadDesList(null);
+		ciudad.setCiudadSalList(null);
+		ciudad.setCiudadDesList(null);
 
-			ciudad = ciudadRepository.save(ciudad);
+		ciudad = ciudadRepository.save(ciudad);
 
-			ciudad.setCiudadSalList(new LinkedList<>());
-			ciudad.setCiudadDesList(new LinkedList<>());
+		ciudad.setCiudadSalList(new LinkedList<>());
+		ciudad.setCiudadDesList(new LinkedList<>());
 
-			if (ciudadSal != null) {
-				for (Vuelo v : ciudadSal) {
-					v.setIdSalCiudad(ciudad.getIdCiudad());
-					vueloRepository.save(v);
-					ciudad.getCiudadSalList().add(v);
-				}
+		if (ciudadSal != null) {
+			for (Vuelo v : ciudadSal) {
+				v.setIdSalCiudad(ciudad.getIdCiudad());
+				vueloRepository.save(v);
+				ciudad.getCiudadSalList().add(v);
 			}
+		}
 
-			if (ciudadDes != null) {
-				for (Vuelo vd : ciudadDes) {
-					vd.setIdDesCiudad(ciudad.getIdCiudad());
-					vueloRepository.save(vd);
-					ciudad.getCiudadDesList().add(vd);
-				}
+		if (ciudadDes != null) {
+			for (Vuelo vd : ciudadDes) {
+				vd.setIdDesCiudad(ciudad.getIdCiudad());
+				vueloRepository.save(vd);
+				ciudad.getCiudadDesList().add(vd);
 			}
+		}
 
-			
-			Optional<Ciudad> ciudadR;
-			ciudadR = ciudadRepository.findById(ciudad.getIdCiudad());
-			if (ciudadR.isPresent()) {
-				ciudad = ciudadR.get();
-
-			}
-			return ciudad;
+		Optional<Ciudad> ciudadR;
+		ciudadR = ciudadRepository.findById(ciudad.getIdCiudad());
+		if (ciudadR.isPresent()) {
+			ciudad = ciudadR.get();
 
 		}
-		
-		/*
-		 // SERVICIO ELIMINAR
+		return ciudad;
 
-	@DeleteMapping(path = "/eliminar/{idpais}")
-	public void deletePais(@PathVariable("idpais") Integer idpais) {
+	}
 
-		Optional<Pais> pais;
-		pais = paisRepository.findById(idpais);
-		if (pais.isPresent()) {
-			Pais borrar = pais.get();
+	// SERVICIO ELIMINAR
 
-			for (Ciudad ciudad : borrar.getCiudadList()) {
-				ciudadRepository.delete(ciudad);
-			}
+	@DeleteMapping(path = "/eliminar/{idCiudad}")
+	public void deleteCiudad(@PathVariable("idCiudad") Integer idCiudad) {
 
-			for (Vuelo vueloDestino : borrar.getVueloDesList()) {
+		Optional<Ciudad> ciudad;
+		ciudad = ciudadRepository.findById(idCiudad);
+		if (ciudad.isPresent()) {
+			Ciudad borrar = ciudad.get();
+
+			
+			for (Vuelo vueloDestino : borrar.getCiudadDesList()) {
 				vueloRepository.delete(vueloDestino);
 			}
 
-			for (Vuelo vueloSalida : borrar.getVueloSalList()) {
+			for (Vuelo vueloSalida : borrar.getCiudadSalList()) {
 				vueloRepository.delete(vueloSalida);
 			}
 
-			paisRepository.delete(pais.get());
+			ciudadRepository.delete(ciudad.get());
 		}
-	}*/
-		 
+	}
+
 }
