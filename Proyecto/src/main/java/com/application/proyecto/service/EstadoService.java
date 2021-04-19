@@ -73,6 +73,12 @@ public class EstadoService {
 		return estados;
 	}
 	
+	
+	/*
+	 * No se usará el eliminar estado debido a que en la base de datos
+	 * se ha colocado NOT NULL.
+	 */
+	
 	@DeleteMapping(path="/eliminar/{idEstado}")
 	public void deleteEstado(@PathVariable ("idEstado") String idEstado) {
 		Optional<Estado> estado;
