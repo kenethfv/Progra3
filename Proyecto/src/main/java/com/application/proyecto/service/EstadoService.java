@@ -56,7 +56,12 @@ public class EstadoService {
 				estado.getVueloClienteList().add(t);
 			}
 		}
-		
+		Optional<Estado> estadoE;
+		estadoE = estadoRepository.findById(estado.getIdEstado());
+		if(estadoE.isPresent()) {
+			estado = estadoE.get();
+		}
+				
 		return estado;
 	}
 	
@@ -68,12 +73,19 @@ public class EstadoService {
 		return estados;
 	}
 	
+	
+	/*
+	 * No se usará el eliminar estado debido a que en la base de datos
+	 * se ha colocado NOT NULL.
+	 */
+	
 	@DeleteMapping(path="/eliminar/{idEstado}")
 	public void deleteEstado(@PathVariable ("idEstado") String idEstado) {
 		Optional<Estado> estado;
 		estado= estadoRepository.findById(idEstado);
 		if(estado.isPresent()) {
 			Estado borrar = estado.get();
+			
 			for(VueloCliente e : borrar.getVueloClienteList()) {
 				vueloClienteRepository.delete(e);
 			}
