@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.application.proyecto.entity.Estado;
 import com.application.proyecto.entity.Proveedor;
 import com.application.proyecto.repository.ProveedorRepository;
 
@@ -31,14 +30,8 @@ public class ProveedorService {
 	}
 
 	@PostMapping(path = "/guardar")
-	public Proveedor save(@RequestBody Proveedor proveedor) {
-		Optional<Proveedor> proveedorP;
-		proveedorP = proveedorRepository.findById(proveedor.getIdproveedor());
-		if(proveedorP.isPresent()) {
-			proveedor = proveedorP.get();
-		}
-		
-		
+	public Proveedor saveProveedor(@RequestBody Proveedor proveedor) {
+				
 		return proveedorRepository.save(proveedor);
 	}
 
