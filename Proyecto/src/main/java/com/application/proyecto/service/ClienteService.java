@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.application.proyecto.entity.Cliente;
 import com.application.proyecto.repository.ClienteRepository;
-import com.application.proyecto.repository.VueloClienteRepository;
+
 
 @RestController
 @RequestMapping("/cliente")
@@ -25,16 +25,14 @@ public class ClienteService {
 	@Autowired
 	ClienteRepository clienteRepository;
 
-	@Autowired
-	VueloClienteRepository vueloClienteRepository;
 
 	@GetMapping(path = "/buscar")
-	public List<Cliente> getAllClientes() {
+	public List<Cliente> getAllCliente() {
 		return clienteRepository.findAll();
 	}
 
 	@PostMapping(path = "/guardar")
-	public Cliente save(@RequestBody Cliente cliente) {
+	public Cliente saveCliente(@RequestBody Cliente cliente) {
 		return clienteRepository.save(cliente);
 	}
 
