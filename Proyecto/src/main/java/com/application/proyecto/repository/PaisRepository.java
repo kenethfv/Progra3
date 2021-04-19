@@ -9,7 +9,7 @@ import com.application.proyecto.entity.Pais;
 
 @Repository("PaisRepository")
 
-public interface PaisRepository extends JpaRepository<Pais, Serializable>{
+public interface PaisRepository extends JpaRepository<Pais, Serializable> {
 	
 	
 
