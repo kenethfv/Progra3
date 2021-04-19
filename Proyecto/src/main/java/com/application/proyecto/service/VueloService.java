@@ -35,7 +35,7 @@ public class VueloService {
 		return vueloRepository.save(vuelo);
 	}
 	
-	@DeleteMapping (path = "/eliminar/{idvuelo")
+	@DeleteMapping (path = "/eliminar/{idvuelo}")
 	public void deleteRol(@PathVariable ("idvuelo") Integer idvuelo) {
 		
 		Optional<Vuelo> vuelo;

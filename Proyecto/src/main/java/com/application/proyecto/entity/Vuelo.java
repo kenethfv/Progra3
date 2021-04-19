@@ -2,7 +2,6 @@ package com.application.proyecto.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.text.DecimalFormat;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -41,7 +40,7 @@ public class Vuelo implements Serializable{
 	private Date fechallegada;
 	
 	@Column (name = "precio")
-	private DecimalFormat precio;
+	private Double precio;
 	
 	@Column (name = "idsalpais")
 	private Integer IdSalPais;
@@ -89,11 +88,11 @@ public class Vuelo implements Serializable{
 		this.fechallegada = fechallegada;
 	}
 
-	public DecimalFormat getPrecio() {
+	public Double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(DecimalFormat precio) {
+	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
 
