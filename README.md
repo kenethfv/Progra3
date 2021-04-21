@@ -19,4 +19,6 @@ Utilizaremos la base de datos de MySQL para almacenar la información.
 
 Miembors del grupo:
 
+Rocio 
 Diego Esaú Chinchilla Solares // Carné: 3190-19-50
+Anibal 
