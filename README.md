@@ -16,3 +16,7 @@ Podremos ver en pantallas si el vuelo esta retrasado, o si esta en tiempo de acu
 La información se muestra a través de un tablero y se puede actualizar a través de un usuario de administrador en caso sea necesario.
 El vuelo deberá desaparecer del tablero cuando el estado del vuelo, se encuentre como completado.
 Utilizaremos la base de datos de MySQL para almacenar la información.
+
+Miembors del grupo:
+
+Diego Esaú Chinchilla Solares-3190-19-50
