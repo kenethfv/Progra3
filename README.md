@@ -22,4 +22,4 @@ Miembors del grupo:
 * Monica Rocío Escobar Yocuté 		// Carné: 3190-19-7379
 * Diego Esaú Chinchilla Solares 	// Carné: 3190-19-50
 * Aníbal Estuardo Muñoz Hernández 	// Carné: 3190-19-1951
-* Carlos Arenas 					// Carné: 
+* Carlos Isaac Arenas Guzmán		// Carné: 3190-19-9196
