@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  loading: boolean = false;
+  usuario: any = "admin";
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  iniciarSesion(resultado: any) {
+    this.loading = false;
+    if(resultado == "admin"){
+        location.href = "/menu";
+    }
+    }
 
 }
