@@ -10,18 +10,31 @@ import { HttpHeaders } from '@angular/common/http';
 export class LoginComponent implements OnInit {
 
   loading: boolean = false;
-  usuario: any = "admin";
+  usuario: any = {};
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
+  login() {
+    let formulario: any = document.getElementById("login");
+    let formularioValido: boolean = formulario.reportValidity();
+    if (formularioValido) {
+      this.loading = true;
+      this.iniciarSesion
+    }
+  }
+
   iniciarSesion(resultado: any) {
     this.loading = false;
-    if(resultado == "admin"){
+    if (resultado) {
+      localStorage.setItem("usuario", JSON.stringify(resultado));
+
+      if (resultado == "admin") {
         location.href = "/menu";
+      }
     }
-    }
+  }
 
 }
