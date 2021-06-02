@@ -4,9 +4,8 @@ import {LoginComponent} from './login/Login.component';
 import {MenuComponent} from './menu/menu.component';
 
 const routes: Routes = [
-  { path: '',component: LoginComponent},
-  { path: 'menu',component: MenuComponent},
-  
+  { path: 'login',component: LoginComponent},
+  { path: 'menu',component: MenuComponent}
 
 ];
 
