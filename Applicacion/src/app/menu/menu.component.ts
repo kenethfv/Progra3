@@ -15,6 +15,12 @@ export class MenuComponent implements OnInit {
 
   private serviceURL = 'http://localhost:8080/cliente';
   private mybSubject: BehaviorSubject<any>;
+  private actualizarTexto: any;
+  public texto = 'prueba';
+
+  clientes: any = [];
+  cliente: any = {};
+
 
 
 
@@ -27,7 +33,8 @@ export class MenuComponent implements OnInit {
   
 
   ngOnInit(): void {
-
+    this.doSubjectSubscription();
+    this.doNotificationSubscription();  
   }
 
 
@@ -56,16 +63,47 @@ export class MenuComponent implements OnInit {
 
 
 public doNotificationSubscription(): void {
-  this.mybSubject
+  
       this.getClienteNotification()
       .subscribe((result) => {
 
         console.log('Mensaje recibido:' + JSON.stringify(result));
-        // actualizartabla
         this.mybSubject.next(result);
       
       });
 }
+
+public doSubjectSubscription(): void {
+  this.mybSubject.subscribe((result) => {
+    this.actualizarTexto(result);
+  });
+
+  this.mybSubject.subscribe((result) => {
+    this.texto = this.texto + JSON.stringify(result);
+  });
+
+  this.buscarClientes();
+
+}
+
+
+buscarClientes(){
+  this.buscarClientesServicio().subscribe(
+    (response:any)=>this.llenarClientes(response) 
+  )
+}
+
+buscarClientesServicio():Observable<any>{
+  return this.http.get<any>("http://localhost:8080/cliente/buscar").pipe(
+    catchError(e=>"error")
+  )
+}
+
+
+llenarClientes(clientes:any){
+  this.clientes = clientes;
+}
+
 
 
 }
