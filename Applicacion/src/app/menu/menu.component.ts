@@ -5,11 +5,6 @@ import {HttpHeaders} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
 
 
-
-
-
-
-
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
