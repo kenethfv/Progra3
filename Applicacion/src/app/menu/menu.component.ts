@@ -3,6 +3,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
+import {Subject} from 'rxjs';
 
 
 @Component({
@@ -16,7 +17,9 @@ export class MenuComponent implements OnInit {
   private serviceURL = 'http://localhost:8080/cliente';
   private mybSubject: BehaviorSubject<any>;
   private actualizarTexto: any;
-  public texto = 'prueba';
+  public texto = 'nuevo dato ingresado: ';
+  private refresh = new Subject<void>();
+
 
   clientes: any = [];
   cliente: any = {};
@@ -69,6 +72,8 @@ public doNotificationSubscription(): void {
 
         console.log('Mensaje recibido:' + JSON.stringify(result));
         this.mybSubject.next(result);
+
+        
       
       });
 }
@@ -80,9 +85,13 @@ public doSubjectSubscription(): void {
 
   this.mybSubject.subscribe((result) => {
     this.texto = this.texto + JSON.stringify(result);
+    
+
+    this.buscarClientes();
+    
   });
 
-  this.buscarClientes();
+  
 
 }
 
