@@ -9,16 +9,26 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  loading: boolean= false;
+  usuario: String = "admin";
+  pass: String = "admin";
+  loading: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   login() {
+    this.loading = true;
+
+    if (this.usuario == "admin" && this.pass == "admin") {
+      location.href = "/menu";
+
+    } else {
+      location.href = "/login";
+    }
 
   }
-
 
 
 }

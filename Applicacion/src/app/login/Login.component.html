@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <br>
-            <h1>Proyecto de Programación III</h1>
+            <h1>Proyecto Programación III</h1>
             <hr>
             <br>
 
@@ -12,33 +12,51 @@
     <div class="row" *ngIf="loading">
         <div class="col-md-12">
             <div class="spinner-border text-info float-right" role="status">
-                <span class="sr-only">Loading...</span>
+                <span class="sr-only"></span>
             </div>
         </div>
         <br>
     </div>
 
-    <div class="abs-center">
-        <div class="row">
-            <div class="col-xs-5">
-                <input type="text" placeholder="User" class="form-control" required>
-                <br>
+    <form (ngSubmit)="login()" id="login">
+        <div class="abs-center">
+            <div class="row">
+                <div class="col-xs-6">
+                    <input type="text" [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" 
+                    placeholder="User" class="form-control" required>
+                    <br>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="abs-center">
-        <div class="row">
-            <div class="col-xs-5">
-                <input type="password" placeholder="Password" class="form-control" required>
+        <div class="abs-center">
+            <div class="row">
+                <div class="col-xs-6">
+                    <input type="password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}" 
+                    placeholder="Password" class="form-control" required>
+                    <br>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <input class="btn btn-outline-success float-right" type="submit" value="Ingresar">
+        <div class="row">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <input class="btn btn-outline-success float-right" type="submit" value="Ingresar">
+            </div>
         </div>
-    </div>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
