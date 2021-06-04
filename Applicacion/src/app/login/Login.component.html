@@ -1,11 +1,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <br>
             <h1>Proyecto de Programación III</h1>
+        </div>
+        <div class="col-md-12">
             <hr>
-            <br>
-
         </div>
     </div>
 
@@ -18,27 +17,30 @@
         <br>
     </div>
 
-    <div class="abs-center">
-        <div class="row">
-            <div class="col-xs-5">
-                <input type="text" placeholder="User" class="form-control" required>
-                <br>
-            </div>
+    <form (ngSubmit)="login()" id="login">
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" placeholder="User" class="form-control" required>
+            <br>
         </div>
     </div>
 
-    <div class="abs-center">
-        <div class="row">
-            <div class="col-xs-5">
-                <input type="password" placeholder="Password" class="form-control" required>
-            </div>
-        </div>
-    </div>
+
 
     <div class="row">
         <div class="col-md-12">
-            <input class="btn btn-outline-success float-right" type="submit" value="Ingresar">
+            <input type="password" placeholder="Password" class="form-control" required>
         </div>
     </div>
+
+
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <input class="btn btn-primary float-right" type="submit" value="Ingresar">
+        </div>
+    </div>
+</form>
+    <br>
 
 </div>
