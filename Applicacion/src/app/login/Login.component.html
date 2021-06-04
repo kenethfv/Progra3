@@ -1,9 +1,44 @@
-<h1>Proyecto Programación III</h1>
-<h2>Tiempo Real</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <h1>Proyecto de Programación III</h1>
+            <hr>
+            <br>
 
-<input  type="text" placeholder="Nombre">
-<br>
-<br>
-<div class="example-button-row">
-<button mat-raised-button color="primary">Ingresar</button>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="loading">
+        <div class="col-md-12">
+            <div class="spinner-border text-info float-right" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <div class="abs-center">
+        <div class="row">
+            <div class="col-xs-5">
+                <input type="text" placeholder="User" class="form-control" required>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <div class="abs-center">
+        <div class="row">
+            <div class="col-xs-5">
+                <input type="password" placeholder="Password" class="form-control" required>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <input class="btn btn-outline-success float-right" type="submit" value="Ingresar">
+        </div>
+    </div>
+
 </div>

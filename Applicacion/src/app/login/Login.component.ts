@@ -9,6 +9,7 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
+  loading: boolean= false;
   constructor() { }
 
   ngOnInit(): void {

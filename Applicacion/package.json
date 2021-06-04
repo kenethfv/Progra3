@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~11.2.6",
     "@angular/platform-browser-dynamic": "~11.2.6",
     "@angular/router": "~11.2.6",
+    "bootstrap": "^5.0.1",
     "event-source-polyfill": "^1.0.24",
     "ng-event-source": "^1.0.14",
     "rxjs": "~6.6.0",
