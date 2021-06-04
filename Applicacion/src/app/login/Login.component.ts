@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
       location.href = "/menu";
 
     } else {
-      location.href = "/login";
+
+      location.href = "/";
     }
 
   }
