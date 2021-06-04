@@ -11,7 +11,10 @@ input, button{
 
 .abs-center {
   display: flex;
+  align-items: center;
   justify-content: center;
+  
 }
-
-
+.text-decoration{
+      font-style: italic;
+}

@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     this.loading = true;
 
     if (this.usuario == "admin" && this.pass == "admin") {
-      location.href = "/menu";
+      location.href = "/inicio";
 
     } else {
 
