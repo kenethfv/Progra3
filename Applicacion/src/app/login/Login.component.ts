@@ -9,7 +9,6 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  errorInicio: boolean = false;
   NombreCliente: any = {};
   loading: boolean = false;
 
@@ -40,9 +39,7 @@ export class LoginComponent implements OnInit {
         location.href = "/inicio";
       }
     }
-    else {
-      this.errorInicio = true;
-    }
+
   }
 
   loginService() {

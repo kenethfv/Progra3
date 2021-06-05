@@ -23,9 +23,9 @@
     <form (ngSubmit)="login()" id="login">
         <div class="row">
             <div class="form-floating mb-3">
-                <input type="text" [(ngModel)]="NombreCliente.NombreCliente" [ngModelOptions]="{standalone: false}" id="floatingInput" placeholder="User"
-                    class="form-control"required >
-                    <label for="floatingInput">  Usuario</label>
+                <input type="text" [(ngModel)]="NombreCliente.NombreCliente" [ngModelOptions]="{standalone: true}"
+                    id="floatingInput" placeholder="User" class="form-control" required>
+                <label for="floatingInput"> Usuario</label>
                 <br>
             </div>
         </div>
@@ -33,9 +33,10 @@
 
         <div class="row">
             <div class="form-floating">
-                <input type="password" [(ngModel)]="NombreCliente.PasswordCliente" [ngModelOptions]="{standalone: false}" id="floatingInput" placeholder="Password"
+                <input type="password" [(ngModel)]="NombreCliente.PasswordCliente"
+                    [ngModelOptions]="{standalone: true}" id="floatingInput" placeholder="Password"
                     class="form-control" required>
-                    <label for="floatingInput">Contraseña</label>
+                <label for="floatingInput">Contraseña</label>
 
             </div>
         </div>
@@ -43,7 +44,8 @@
         <br>
         <div class="row">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary" type="submit" value="Ingresar"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
+                <button class="btn btn-primary" type="submit" value="Ingresar"><i class="fas fa-sign-in-alt"></i>
+                    Ingresar </button>
             </div>
         </div>
 
