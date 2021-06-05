@@ -25,9 +25,9 @@
 
         <div class="row">
             <div class="form-floating mb-3">
-                <input type="text" [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" id="floatingInput" placeholder="User"
+                <input type="text" [(ngModel)]="usuario" [ngModelOptions]="{standalone: false}" id="floatingInput" placeholder="User"
                     class="form-control"required >
-                    <label for="floatingInput">Usuario</label>
+                    <label for="floatingInput">  Usuario</label>
                 <br>
             </div>
         </div>
@@ -35,7 +35,7 @@
 
         <div class="row">
             <div class="form-floating">
-                <input type="password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}" id="floatingInput" placeholder="Password"
+                <input type="password" [(ngModel)]="pass" [ngModelOptions]="{standalone: false}" id="floatingInput" placeholder="Password"
                     class="form-control" required>
                     <label for="floatingInput">Contraseña</label>
 
