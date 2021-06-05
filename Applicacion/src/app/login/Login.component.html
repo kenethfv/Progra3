@@ -20,14 +20,17 @@
         <br>
     </div>
 
-    <form (ngSubmit)="login()" id="login">
+    <div class="row" *ngIf="loading">
+        <label class="float-right" style="color: red;">Usuario o password incorrecto</label>
+    </div>
+    
 
-
+    <form (ngSubmit)="validarDatos()">
         <div class="row">
             <div class="form-floating mb-3">
-                <input type="text" [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}" id="floatingInput" placeholder="User"
-                    class="form-control"required >
-                    <label for="floatingInput">  Usuario</label>
+                <input type="text" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}"
+                    id="floatingInput" placeholder="User" class="form-control" required>
+                <label for="floatingInput">Usuario</label>
                 <br>
             </div>
         </div>
@@ -35,20 +38,22 @@
 
         <div class="row">
             <div class="form-floating">
-                <input type="password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}" id="floatingInput" placeholder="Password"
+                <input type="password" [(ngModel)]="password"
+                    [ngModelOptions]="{standalone: true}" id="floatingInput" placeholder="Password"
                     class="form-control" required>
-                    <label for="floatingInput">Contraseña</label>
+                <label for="floatingInput">Contraseña</label>
 
             </div>
         </div>
-
 
         <br>
         <div class="row">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
+                <button class="btn btn-primary" type="submit" value="Ingresar"><i class="fas fa-sign-in-alt"></i>
+                    Ingresar </button>
             </div>
         </div>
+
     </form>
     <br>
 
