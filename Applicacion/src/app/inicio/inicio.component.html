@@ -46,11 +46,14 @@
 
         <br>
 
-        <select class="form-select" aria-label="Default select example">
-            <option selected class="col-md-12">Genero</option>
-            <option value="1">Masculino</option>
-            <option value="2">Femenino</option>
-          </select>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="M" (change)="radioSelection($event)">
+            <label class="form-check-label" for="inlineRadio1">M</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="F" (change)="radioSelection($event)">
+            <label class="form-check-label" for="inlineRadio2">F</label>
+        </div>
 
         <br>
         <br>
