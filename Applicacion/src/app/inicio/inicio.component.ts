@@ -9,18 +9,21 @@ import { catchError } from 'rxjs/operators';
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.scss']
 })
+
 export class InicioComponent implements OnInit {
 
   loading: boolean = false;
 
+  Cliente: any = {};
 
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.Cliente = {};
   }
 
-  /*
+
   crear() {
     let formulario: any = document.getElementById("crear");
     let formularioValido: boolean = formulario.reportValidity();
@@ -30,14 +33,14 @@ export class InicioComponent implements OnInit {
         data => this.confirmar(data)
       )
     }
-  } 
+  }
 
 
   confirmar(resultado: any) {
     this.loading = false;
     if (resultado) {
       alert("Cliente creado exitosamente")
-      this.cliente = { correoList: [], telefonoList: [], direccionList: [], rolUsuarioIdrolUsuario: 2 };
+      this.Cliente = {};
     } else {
       alert("Error al crear el cliente.");
     }
@@ -49,40 +52,8 @@ export class InicioComponent implements OnInit {
         'Content-Type': 'application/json'
       })
     }
-    return this.http.post<any>("http://localhost:3030/usuario/guardar", this.usuario, httpOptions)
+    return this.http.post<any>("localhost:8080/cliente/guardar", this.Cliente, httpOptions)
   }
 
-  regresar() {
-    location.href = "/";
-  }
 
-  //TELEFONOS
-
-  agregarTelefono() {
-    this.usuario.telefonoList.push({});
-  }
-
-  borrarTelefono(telefono: any) {
-    this.usuario.telefonoList.splice(this.usuario.telefonoList.indexOf(telefono), 1);
-  }
-
-  //CORREOS
-
-  agregarCorreo() {
-    this.usuario.correoList.push({});
-  }
-
-  borrarCorreo(correo: any) {
-    this.usuario.correoList.splice(this.usuario.correoList.indexOf(correo), 1);
-  }
-
-  //DIRECCIONES
-  agregarDireccion() {
-    this.usuario.direccionList.push({});
-  }
-
-  borrarDireccion(direccion: any) {
-    this.usuario.direccionList.splice(this.usuario.direccionList.indexOf(direccion), 1);
-  }
-*/
 }
