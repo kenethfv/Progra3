@@ -9,31 +9,19 @@
             <hr>
         </div>
     </div>
-
-
-
-
     <br>
     <br>
     <br>
     <br>
-
-
-
-
-
-
 
     <div class="row">
         <div class="col-md-12">
-            <h1>Crea un nuevo cliente</h1>
+            <h1>Crea Un Nuevo Cliente</h1>
         </div>
         <div class="col-md-12">
             <hr>
         </div>
     </div>
-
-
     <form (ngSubmit)="crear()" id="crear">
 
         <div class="row">
@@ -44,8 +32,10 @@
 
         <br>
 
-        <div class="col-md-11" [(ngModel)]="Cliente.correocliente" [ngModelOptions]="{standalone:false}">
+        <div class="row">
+        <div class="col-md-12" [(ngModel)]="Cliente.correocliente" [ngModelOptions]="{standalone:false}">
             <input type="email" placeholder="Correo" class="form-control" required>
+        </div>
         </div>
 
         <br>
@@ -71,7 +61,6 @@
         <br>
         <br>
 
-
         <div class="row">
             <div class="col-md-12">
                 <input class="btn btn-success float-right" type="submit" value="Crear">
@@ -79,10 +68,6 @@
         </div>
 
     </form>
-
-   
-
-   
 
     <br>
 
