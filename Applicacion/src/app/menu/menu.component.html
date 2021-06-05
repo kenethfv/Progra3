@@ -10,19 +10,24 @@
 
     <br>
     <br>
-    <table class="table table-striped">
+    <div class="container">
+    <table border="1" class="table table-striper">
+        <thead>
         <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Correo</th>
             <th>Sexo</th>
         </tr>
+        </thead>
+        <tbody>
         <tr *ngFor="let nombre of clientes">
             <td>{{nombre.idcliente}}</td>
             <td>{{nombre.nombrecliente}}</td>
             <td>{{nombre.correocliente}}</td>
             <td>{{nombre.sexo}}</td>
         </tr>
+        </tbody>
     </table>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -30,5 +35,5 @@
             <a href="/inicio">Volver</a>
         </div>
     </div>
-
+    </div>
 </div>

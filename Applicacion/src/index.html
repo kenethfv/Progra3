@@ -2,14 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Applicacion</title>
+  <title>Aplicacion</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+ 
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light"style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="/src/img/fondo.jpg" class="" alt=""> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/menu">Tablero</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active" href="/logs">Registros</a>
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">Cerrar Sesion</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
   <app-root></app-root>
 
-  
+
 </body>
 </html>
