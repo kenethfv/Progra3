@@ -14,13 +14,13 @@ export class InicioComponent implements OnInit {
 
   loading: boolean = false;
 
-  Cliente: any = {};
+  Cliente: any = [];
 
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.Cliente = {};
+    this.Cliente = [];
   }
 
 

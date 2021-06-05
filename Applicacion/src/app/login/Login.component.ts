@@ -11,13 +11,15 @@ export class LoginComponent implements OnInit {
 
   NombreCliente: any = {};
   loading: boolean = false;
+  nombre = '';
+  password = '';
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  login() {
+  /*login() {
     let formulario: any = document.getElementById("login");
     let formularioValido: boolean = formulario.reportValidity();
     if (formularioValido) {
@@ -50,5 +52,14 @@ export class LoginComponent implements OnInit {
     }
     return this.http.post<any>("http://localhost:8080/cliente/login", this.NombreCliente, httpOptions);
 
+  }*/
+
+  validarDatos(){
+    if(this.nombre == 'admin' && this.password == 'admin'){
+      location.href = "/inicio";
+    } else {
+      location.href= " ";
+      this.loading = true;
+    }
   }
 }
