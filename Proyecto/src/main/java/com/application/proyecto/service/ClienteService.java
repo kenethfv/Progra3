@@ -128,5 +128,17 @@ public class ClienteService {
 		);
 	}
 	
-
+	
+	@PostMapping(path="/login")
+	public Cliente login (@RequestBody Cliente cliente) {
+		
+		List<Cliente> clientes = clienteRepository.findByNombreclienteAndPasswordcliente(cliente.getNombrecliente(), cliente.getPasswordcliente());
+		
+		if(!clientes.isEmpty()) {
+			return clientes.get(0);
+		}
+			return null;
+	}
+	
+	
 }
